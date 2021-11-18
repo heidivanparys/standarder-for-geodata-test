@@ -439,13 +439,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Dublin Core metadata,
 see https://www.dublincore.org/specifications/dublin-core/dcq-html/
 and https://www.dublincore.org/specifications/dublin-core/dcmi-terms/. -->
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
 <meta name="DC.creator" lang="da" content="Styrelsen for Dataforsyning og Effektivisering" />
-<meta name="DC.date" content="2021-11-05" />
+<meta name="DC.date" content="2021-11-18" />
 <meta name="DC.description" lang="da" content="Detaljeret gennemgang af relevante standarder og best practices, som det anbefales myndigheder at anvende ved indsamling, behandling og distribution af geodata, der skal indgå i digitale løsninger til brug for offentlig forvaltning." />
 <meta name="DC.language" content="da" />
 <meta name="DC.subject" lang="da" content="geodata, standard, standarder, best practice, best practices, ISO, OGC, INSPIRE" />
@@ -456,7 +455,7 @@ body{font-family:Helvetica,Arial,sans-serif}
 h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family: Helvetica,Arial,sans-serif;color:#00818f}
 #toc ul{font-family: Helvetica,Arial,sans-serif}
 .admonitionblock>table td.icon .title{font-family: Helvetica,Arial,sans-serif}
-.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{font-family: Helvetica,Arial,sans-serif}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{font-family: Helvetica,Arial,sans-serif; color:#00818f}
 /* Change color of links */
 a:link{color:#00818f;text-decoration:none}
 a:visited{color:#00818f;text-decoration:none}
@@ -476,6 +475,13 @@ body.toc2.toc-right{padding-right:22.5em}
 body.toc2{padding-left:30em}
 #toc.toc2{width:30em}
 body.toc2.toc-right{padding-right:30em}
+/* Style of bibliographicaldetailsblock inspired by sidebarblock */
+.bibliographicaldetailsblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:0.5em;background:#f1f0eb;border-radius:4px}
+.bibliographicaldetailsblock p{margin-bottom:0em}
+.bibliographicaldetailsblock>:first-child{margin-top:0}
+.bibliographicaldetailsblock>:last-child{margin-bottom:0}
+/* Style of remarks blocks */
+//.remarksblock>.content{change if needed}
 }
 </style>
 <script type="application/ld+json">
@@ -491,7 +497,7 @@ body.toc2.toc-right{padding-right:30em}
 		},
 	  "url": "https://sdfe.dk/"
 	}],
-	"dateModified": "2021-11-05",
+	"dateModified": "2021-11-18",
 	"headline": "Anbefalede standarder for geodata",
 	"name": "Anbefalede standarder for geodata",
 	"keywords": "geodata, standard, standarder, best practice, best practices, ISO, OGC, INSPIRE",
@@ -506,7 +512,7 @@ body.toc2.toc-right{padding-right:30em}
 <span id="author" class="author">Styrelsen for Dataforsyning og Effektivisering</span><br>
 <span id="email" class="email"><a href="https://sdfe.dk/" class="bare">https://sdfe.dk/</a></span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2021-11-05</span>
+<span id="revdate">2021-11-18</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Indholdsfortegnelse</div>
@@ -519,7 +525,7 @@ body.toc2.toc-right{padding-right:30em}
 </li>
 <li><a href="#fortegnelse">2. Standarder og best practices på udvalgte områder med relation til geodata</a>
 <ul class="sectlevel2">
-<li><a href="#begrebs-og-datamodeller">2.1. Begrebs- og datamodeller</a>
+<li><a href="#begrebs-datamodeller">2.1. Begrebs- og datamodeller</a>
 <ul class="sectlevel3">
 <li><a href="#fda-hvidbog">2.1.1. Hvidbog om fællesoffentlig digital arkitektur</a></li>
 <li><a href="#fda-modelregler">2.1.2. Fællesoffentlige regler for begrebs- og datamodellering</a></li>
@@ -623,6 +629,78 @@ Standarderne kan nemlig være relevante at anvende i forbindelse med
 anvendelse af geografi i lovgivningen, særligt i forhold til
 registermetoden (beskrevet i <em>Vejledning om geografi i
 lovgivningen</em> <a href="#vej-2020-9428">[VEJ nr 9428]</a>).</p>
+</div>
+<div id="laesevejledning" class="openblock">
+<div class="title">Læsevejledning</div>
+<div class="content">
+<div class="paragraph">
+<p>Dette dokument er opbygget på følgende måde:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der er beskrevet nogle rammer for indholdet, det vil sige nogle lovgivningsmæssige rammer, og hvor de behandlede dokumenter (især standarder) primært kommer fra</p>
+</li>
+<li>
+<p>En gennemgang af de relevante dokumenter, delt op i følgende kategorier:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#begrebs-datamodeller">Begrebs- og datamodeller</a></p>
+</li>
+<li>
+<p><a href="#identifikatorer">Identifikatorer</a></p>
+</li>
+<li>
+<p><a href="#geometrimodel_opbevaring">Geometrimodel og opbevaring af geodata</a></p>
+</li>
+<li>
+<p><a href="#geografisk-reference">Geografisk reference</a></p>
+</li>
+<li>
+<p><a href="#tid-historik">Tid og historik</a></p>
+</li>
+<li>
+<p><a href="#metadata">Metadata</a></p>
+</li>
+<li>
+<p><a href="#indkodninger">Udveksling af geodata - indkodninger</a></p>
+</li>
+<li>
+<p><a href="#tjenester">Udveksling af geodata - tjenester</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Teksten i de nævnte kategorier er opbygget på følgende måde:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Der er en introducerende tekst til kategorien.</p>
+</li>
+<li>
+<p>Der et underafsnit for hvert dokument i en given kategori. Underafsnittet indeholder</p>
+<div class="ulist">
+<ul>
+<li>
+<p>først en boks med dokumentets bibliografiske detajler</p>
+</li>
+<li>
+<p>dernæst en kort beskrivelse,</p>
+</li>
+<li>
+<p>og endelig eventuelt nogle bemærkninger, f.eks. hvor man kan finde XML-skemaer til standarden.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -752,7 +830,7 @@ deltager i ISO/TC 211.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -785,7 +863,7 @@ deres produkt.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 OGC-standarder er uden royalties, og er <a href="https://www.ogc.org/docs/is">offentligt tilgængelige</a>.
@@ -804,7 +882,7 @@ OGC-standarder er uden royalties, og er <a href="https://www.ogc.org/docs/is">of
 i de næste afsnit.</p>
 </div>
 <div class="sect2">
-<h3 id="begrebs-og-datamodeller"><a class="anchor" href="#begrebs-og-datamodeller"></a>2.1. Begrebs- og datamodeller</h3>
+<h3 id="begrebs-datamodeller"><a class="anchor" href="#begrebs-datamodeller"></a>2.1. Begrebs- og datamodeller</h3>
 <div class="paragraph">
 <p>Det er et arkitekturprincip i Digitaliseringsstyrelsens <a href="#fda-hvidbog">Hvidbog om fællesoffentlig digital arkitektur</a>,
 at gode data deles og genbruges. Det
@@ -856,11 +934,12 @@ en sammenhængende digitalisering af den offentlige sektor.</p>
 </div>
 <div class="sect3">
 <h4 id="fda-modelregler"><a class="anchor" href="#fda-modelregler"></a>2.1.2. Fællesoffentlige regler for begrebs- og datamodellering</h4>
-<div class="sidebarblock">
+<div class="openblock bibliographicaldetailsblock">
 <div class="content">
-DIGITALISERINGSSTYRELSEN. <em>Fællesoffentlige regler for begrebs- og
-datamodellering</em>. Version 2.0.0. 2019. Tilgængelig på:
-<a href="https://arkitektur.digst.dk/metoder/regler-begrebs-og-datamodellering" class="bare">https://arkitektur.digst.dk/metoder/regler-begrebs-og-datamodellering</a>
+<div class="paragraph">
+<p>DIGITALISERINGSSTYRELSEN. <em>Fællesoffentlige regler for begrebs- og
+datamodellering</em>. Version 2.0.0. 2019. Tilgængelig på: <a href="https://arkitektur.digst.dk/metoder/regler-begrebs-og-datamodellering" class="bare">https://arkitektur.digst.dk/metoder/regler-begrebs-og-datamodellering</a></p>
+</div>
 </div>
 </div>
 <div class="paragraph">
@@ -871,13 +950,9 @@ bl.a. sikre, at der anvendes samme modelleringssprog, at begreber og
 data er navngivet entydigt og meningsfuldt, og at begreber og data er
 defineret fyldestgørende.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
+<div class="openblock remarksblock">
+<div class="title">Bemærkninger</div>
+<div class="content">
 <div class="paragraph">
 <p>I høj fokus skal være egenskaber som går igen i mange datasæt. Eksempler
 er forskellige typer datoer (forslagsdato, vedtagelsesdato, osv.) og
@@ -900,9 +975,7 @@ også punkt 2 om identifikatorer.</p>
 </li>
 </ul>
 </div>
-</td>
-</tr>
-</table>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -944,7 +1017,7 @@ DateTime, osv.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -999,7 +1072,7 @@ kilder.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Der eksisterer p.t. ikke et tilsvarende dansk dokument.
@@ -1022,7 +1095,7 @@ Recommendation ITU-T X.667 | ISO/IEC 9834-8, <em>Information technology – Proc
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Dokumentet er mest relevant for software der skal oprette UUID’er. Det er dog også relevant i
@@ -1063,7 +1136,7 @@ sker det i to eller tre rumlige dimensioner.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Standardens typer er modelleret i “Harmonized Model Repository” og kan derfor anvendes direkte
@@ -1151,7 +1224,7 @@ specificeret yderlige i <a href="#ogc-01-009">[OGC 01-009]</a>, også kendt som 
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1238,7 +1311,7 @@ Structured Query Language (SQL).</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1284,7 +1357,7 @@ og Well-Known Binary (WKB).</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1343,7 +1416,7 @@ koordinatreferencesystemmetadata - at blive leveret.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1433,7 +1506,7 @@ tilgængeligt (“realisering”).</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1471,7 +1544,7 @@ koordinatreferencesystemer.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Standarden er også kendt som DS/ISO 19162:2019, <em>Geografisk information
@@ -1492,7 +1565,7 @@ SDFE, <em>Vejledning i brug af koordinatreferencesystemer</em>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Igangværende arbejde
@@ -1599,7 +1672,7 @@ navngivning og definitioner af begreber inden for dette domæne.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Grunddataprogrammets begreber “virkningstid” og “registreringstid”
@@ -1627,7 +1700,7 @@ SQL-data.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 I SQL-standarden anvendes termen “application time” som synonym for
@@ -1654,7 +1727,7 @@ understøttelse for tidsrelaterede informationer.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Rapporten er i skrivende stund under revidering.
@@ -1688,7 +1761,7 @@ reglen om dobbelthistorikunderstøttelse fra Grunddata-modelreglerne
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Geodatastyrelsen er siden da blevet opdelt i
@@ -1726,7 +1799,7 @@ styrke den forretningsmæssige brug af data.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 SDFE har p.t. et eksisterende regelsæt, som skal revideres.
@@ -1851,7 +1924,7 @@ rigtige i standarden.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1891,7 +1964,7 @@ ligeledes en XML-indkodning til indsamling og behandling af metadata.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1928,7 +2001,7 @@ supporten ved offentliggørelse og opdagelse af tjenester.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -1955,7 +2028,7 @@ Schema implementering af <a href="#19115">DS/EN ISO 19115:2005</a>.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2008,7 +2081,7 @@ specifikke anvendelse.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2074,7 +2147,7 @@ eksempler til anvendelser.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2115,7 +2188,7 @@ metadata direkte på nettet uden åbne og geografiske dataportaler.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 INSPIRE har udviklet en udvidelse til DCAT til håndtering af geografiske
@@ -2172,7 +2245,7 @@ information — Geography Markup Language (GML) — Part 1: Fundamentals</em>.</
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2235,7 +2308,7 @@ and encoding rules</em>.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2301,7 +2374,7 @@ understøtter den direkte brug, fx til analyseformål.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2362,7 +2435,7 @@ der er georefererede.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2461,7 +2534,7 @@ gælder, at de skal kunne returnere vektordata i GML.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2496,7 +2569,7 @@ krav om downloadtjenester ved hjælp af bl.a. <a href="#wfs">WFS 2.0</a>.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <div class="paragraph">
@@ -2548,7 +2621,7 @@ WMS kan udvides så den tillader brugerdefineret styling vha. <a href="#se">Symb
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Sammen med <a href="#se">Symbology Encoding Implementation Specification</a> er denne
@@ -2589,7 +2662,7 @@ forhåndsgenererede georefererede billeder (fx i PNG-formatet).</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Fordi billederne er genereret på forhånd, er performance af WMTS-tjenester bedre end af <a href="#wms">WMS-tjenester</a>.
@@ -2614,7 +2687,7 @@ fra INSPIREs side), <a href="#wmts">WMTS 1.0.0</a> og WMS 1.1.1 <a href="#ogc-01
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 Man kan teste om en tjeneste er i overensstemmelse med vejledningen på
@@ -2642,7 +2715,7 @@ metadata og har operationer så man kan søge på de forskellige felter.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <a href="https://geodata-info.dk/srv/eng/csw?request=GetCapabilities&amp;service=CSW&amp;version=2.0.2">Geodata-info</a>
@@ -2670,7 +2743,7 @@ med metadata som specificeret i <a href="#19115">DS/EN ISO 19115</a>.</p>
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 <a href="https://geodata-info.dk/srv/eng/csw?request=GetCapabilities&amp;service=CSW&amp;version=2.0.2">Geodata-info</a>
@@ -2696,7 +2769,7 @@ Tilgængelig på:
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<div class="title">Note</div>
 </td>
 <td class="content">
 I INSPIRE-regi er man i skrivende stund i gang med at kigge på, hvordan
@@ -2758,7 +2831,7 @@ denne standard.
 <p><a id="stol03"></a>[Stol03] STOLZE, Knut. SQL/MM Spatial - The Standard to Manage Spatial Data in a Relational Database System. I: WEIKUM, Gerhard, SCHÖNING, Harald og RAHM, Erhard, red., <em>BTW 2003, Datenbanksysteme für Business, Technologie und Web, Tagungsband der 10. BTW-Konferenz, 26.-28. Februar 2003, Leipzig</em>. GI, 2003. p. 247–264. LNI. Tilgængelig på: <a href="https://dl.gi.de/20.500.12116/30056" class="bare">https://dl.gi.de/20.500.12116/30056</a></p>
 </li>
 <li>
-<p><a id="vej-2020-9428"></a>[VEJ nr 9428] DIGITALISERINGSSTYRELSEN og STYRELSEN FOR DATAFORSYING OG EFFEKTIVISERING. <em>Vejledning om geografi i lovgivningen</em>. Juli 2020. Tilgængelig på: <a href="https://sdfe.dk/media/2920154/20200708_vejledning1.pdf" class="bare">https://sdfe.dk/media/2920154/20200708_vejledning1.pdf</a> og <a href="https://www.retsinformation.dk/eli/retsinfo/2020/9428" class="bare">https://www.retsinformation.dk/eli/retsinfo/2020/9428</a></p>
+<p><a id="vej-2020-9428"></a>[VEJ nr 9428] DIGITALISERINGSSTYRELSEN og STYRELSEN FOR DATAFORSYING OG EFFEKTIVISERING. <em>Vejledning om geografi i lovgivningen</em>. juli 2020. Tilgængelig på: <a href="https://sdfe.dk/media/2920154/20200708_vejledning1.pdf" class="bare">https://sdfe.dk/media/2920154/20200708_vejledning1.pdf</a> og <a href="https://www.retsinformation.dk/eli/retsinfo/2020/9428" class="bare">https://www.retsinformation.dk/eli/retsinfo/2020/9428</a></p>
 </li>
 <li>
 <p><a id="zamx19"></a>[ZAMX19] ZHOU, Xiaodong, AI, Tinghua, MENG, Nina og XIE, Peng. A PDF Tile Model for Geographic Map Data. <em>ISPRS International Journal of Geo-Information</em>. 27 august 2019. Vol. 8, no. 9, p. 373. doi:<a href="https://doi.org/10.3390/ijgi8090373">10.3390/ijgi8090373</a>. Tilgængelig på: <a href="https://www.mdpi.com/2220-9964/8/9/373" class="bare">https://www.mdpi.com/2220-9964/8/9/373</a></p>
