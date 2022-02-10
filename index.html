@@ -462,18 +462,7 @@ a:hover{color:#0C2D83;text-decoration:underline}
 a:active{color:#0C2D83;text-decoration:underline}
 /* Change background color toc and sidebars */
 #toc.toc2{background:#E7E6E6}
-.sidebarblock{background:#E7E6E6;border:#BBB9B9;}
-/* Change 15 em to 22.5 em for min-width:768px (in comparison to original stylesheet. */
-@media screen and (min-width:768px){
-body.toc2{padding-left:22.5em}
-#toc.toc2{width:22.5em}
-body.toc2.toc-right{padding-right:22.5em}
-}
-/* Change 20 em to 30 em for min-width:1280px (in comparison to original stylesheet. */
-@media screen and (min-width:1280px){
-body.toc2{padding-left:30em}
-#toc.toc2{width:30em}
-body.toc2.toc-right{padding-right:30em}
+.sidebarblock{background:#E7E6E6;border:#BBB9B9}
 /* Style of bibliographicaldetails inspired by sidebarblock */
 .bibliographicaldetails{border:1px solid #BBB9B9;margin-bottom:1.25em;padding:0.5em;background:#E7E6E6;border-radius:4px}
 .bibliographicaldetails p{margin-bottom:0em}
@@ -486,6 +475,17 @@ body.toc2.toc-right{padding-right:30em}
 #eksempel_opbygning p,#eksempel_opbygning td{font-size:80%}
 #eksempel_opbygning div.title>p{color:#0C2D83;font-size:90%}
 .exampleblock>.content{background:#E4E8F3}
+/* Change 15 em to 22.5 em for min-width:768px (in comparison to original stylesheet. */
+@media screen and (min-width:768px){
+body.toc2{padding-left:22.5em}
+#toc.toc2{width:22.5em}
+body.toc2.toc-right{padding-right:22.5em}
+}
+/* Change 20 em to 30 em for min-width:1280px (in comparison to original stylesheet. */
+@media screen and (min-width:1280px){
+body.toc2{padding-left:30em}
+#toc.toc2{width:30em}
+body.toc2.toc-right{padding-right:30em}
 }
 </style>
 <script type="application/ld+json">
@@ -627,11 +627,18 @@ mellem data og systemer, så data kan anvendes og genbruges på tværs.</p>
 <div class="title">Målgruppe</div>
 <div class="content">
 <div class="paragraph">
-<p>Dette dokument er målrettet ??.</p>
+<p>Dette dokument er primært målrettet udviklere og arkitekter med ansvar
+  for data og systemer i en forretning, som bygger på stedbestemmelse.
+ Denne målgruppe har brug for praktisk viden om, hvilke standarder og
+best practices der er nødvendige og anvendelige i forskellige
+tilfælde, og hvor og hvordan disse standarder og best practices kan
+tilgås.</p>
 </div>
 <div class="paragraph">
-<p>Selve standarderne er målrettet teknikere, der har ansvaret for de data og
-systemer, der understøtter forvaltning, som bygger på stedbestemmelse.</p>
+<p>Dette dokument er også målrettet dem der har det overordnede ansvar
+for en forretning, som bygger på stedbestemmelse. Denne målgruppe har
+brug for at have et overblik over standarder til brug i f.eks.
+kravspecikationer mv.</p>
 </div>
 </div>
 </div>
@@ -657,7 +664,7 @@ lovgivningen</em>).</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Det første afsnit beskriver de lovgivningsmæssige rammer for indholdet og de to centrale standardiseringsorganisationer i geodatadomænet som de behandlede dokumenter primært kommer fra.</p>
+<p>Det første afsnit beskriver de lovgivningsmæssige rammer for indholdet og de to centrale standardiseringsorganisationer i geodatadomænet, som de behandlede dokumenter primært kommer fra.</p>
 </li>
 <li>
 <p>Det andet afsnit er en gennemgang af de relevante dokumenter, delt op i emnekategorier, og følger følgende struktur:</p>
@@ -706,7 +713,8 @@ Supplerende bemærkninger, f.eks. hvor man kan finde XML-skemaer til standarden,
 <h3 id="inspire">1.1. INSPIRE-direktivet fastlægger regler for geografisk infrastruktur</h3>
 <div class="paragraph">
 <p><a href="http://data.europa.eu/eli/dir/2007/2/2019-06-26">INSPIRE-direktivet</a> er
-fundamentet for ensartet stedbestemmelse på tværs af forvaltninger i EU.</p>
+ fundamentet for standardisering og deling af geodata på tværs af
+særligt miljøforvaltninger i EU.</p>
 </div>
 <div class="paragraph">
 <p>Adgang til geografisk information er en forudsætning for at kunne
