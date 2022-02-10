@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.16">
+<meta name="generator" content="Asciidoctor 2.0.17">
 <meta name="description" content="Detaljeret gennemgang af relevante standarder og best practices, som det anbefales myndigheder at anvende ved indsamling, behandling og distribution af geodata, der skal indgå i digitale løsninger til brug for offentlig forvaltning.">
 <meta name="keywords" content="geodata, standard, standarder, best practice, best practices, ISO, OGC, INSPIRE">
 <meta name="author" content="Styrelsen for Dataforsyning og Effektivisering">
@@ -196,7 +196,8 @@ body.toc2.toc-right{padding-left:0;padding-right:20em}}
 #content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
 details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
 details{margin-left:1.25rem}
-details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;-webkit-tap-highlight-color:transparent}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
 details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
 details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
 details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
@@ -238,9 +239,8 @@ pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
 table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
 table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
 table.linenotable td.code{padding-left:.75em}
-table.linenotable td.linenos{border-right:1px solid;opacity:.35;padding-right:.5em}
-pre.pygments .lineno{border-right:1px solid;opacity:.35;display:inline-block;margin-right:.75em}
-pre.pygments .lineno::before{content:"";margin-right:-.125em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
 .quoteblock{margin:0 1em 1.25em 1.5em;display:table}
 .quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
 .quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
@@ -277,7 +277,7 @@ table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-c
 table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
 table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
 table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
-table.stripes-all tr,table.stripes-odd tr:nth-of-type(odd),table.stripes-even tr:nth-of-type(even),table.stripes-hover tr:hover{background:#f8f8f7}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
 th.halign-left,td.halign-left{text-align:left}
 th.halign-right,td.halign-right{text-align:right}
 th.halign-center,td.halign-center{text-align:center}
@@ -293,10 +293,11 @@ ol{margin-left:1.75em}
 ul li ol{margin-left:1.5em}
 dl dd{margin-left:1.125em}
 dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
-ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
 ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
 ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
 ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
 ul.checklist>li>p:first-child{margin-left:-1em}
 ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
 ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
@@ -339,8 +340,6 @@ sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
 #footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
 #footnotes .footnote:last-of-type{margin-bottom:0}
 #content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
-.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
-.gist .file-data>table td.line-data{width:99%}
 div.unbreakable{page-break-inside:avoid}
 .big{font-size:larger}
 .small{font-size:smaller}
@@ -444,7 +443,7 @@ see https://www.dublincore.org/specifications/dublin-core/dcq-html/
 and https://www.dublincore.org/specifications/dublin-core/dcmi-terms/. -->
 <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
 <meta name="DC.creator" lang="da" content="Styrelsen for Dataforsyning og Effektivisering" />
-<meta name="DC.date" content="2021-11-18" />
+<meta name="DC.date" content="2022-02-10" />
 <meta name="DC.description" lang="da" content="Detaljeret gennemgang af relevante standarder og best practices, som det anbefales myndigheder at anvende ved indsamling, behandling og distribution af geodata, der skal indgå i digitale løsninger til brug for offentlig forvaltning." />
 <meta name="DC.language" content="da" />
 <meta name="DC.subject" lang="da" content="geodata, standard, standarder, best practice, best practices, ISO, OGC, INSPIRE" />
@@ -452,18 +451,18 @@ and https://www.dublincore.org/specifications/dublin-core/dcmi-terms/. -->
 <style>
 /* Change to same font-family as on https://sdfe.dk; change color of headings */
 body{font-family:Helvetica,Arial,sans-serif}
-h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family: Helvetica,Arial,sans-serif;color:#045c65}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family: Helvetica,Arial,sans-serif;color:#0C2D83}
 #toc ul{font-family: Helvetica,Arial,sans-serif}
 .admonitionblock>table td.icon .title{font-family: Helvetica,Arial,sans-serif}
-.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{font-family: Helvetica,Arial,sans-serif; color:#045c65}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{font-family: Helvetica,Arial,sans-serif; color:#0C2D83}
 /* Change color of links */
-a:link{color:#045c65;text-decoration:underline}
-a:visited{color:#045c65;text-decoration:underline}
-a:hover{color:#045c65;text-decoration:underline}
-a:active{color:#045c65;text-decoration:underline}
+a:link{color:#0C2D83;text-decoration:underline}
+a:visited{color:#0C2D83;text-decoration:underline}
+a:hover{color:#0C2D83;text-decoration:underline}
+a:active{color:#0C2D83;text-decoration:underline}
 /* Change background color toc and sidebars */
-#toc.toc2{background:#f1f0eb}
-.sidebarblock{background:#f1f0eb}
+#toc.toc2{background:#E7E6E6}
+.sidebarblock{background:#E7E6E6;border:#BBB9B9;}
 /* Change 15 em to 22.5 em for min-width:768px (in comparison to original stylesheet. */
 @media screen and (min-width:768px){
 body.toc2{padding-left:22.5em}
@@ -475,13 +474,18 @@ body.toc2.toc-right{padding-right:22.5em}
 body.toc2{padding-left:30em}
 #toc.toc2{width:30em}
 body.toc2.toc-right{padding-right:30em}
-/* Style of bibliographicaldetailsblock inspired by sidebarblock */
-.bibliographicaldetailsblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:0.5em;background:#f1f0eb;border-radius:4px}
-.bibliographicaldetailsblock p{margin-bottom:0em}
-.bibliographicaldetailsblock>:first-child{margin-top:0}
-.bibliographicaldetailsblock>:last-child{margin-bottom:0}
-/* Style of remarks blocks */
-//.remarksblock>.content{change if needed}
+/* Style of bibliographicaldetails inspired by sidebarblock */
+.bibliographicaldetails{border:1px solid #BBB9B9;margin-bottom:1.25em;padding:0.5em;background:#E7E6E6;border-radius:4px}
+.bibliographicaldetails p{margin-bottom:0em}
+.bibliographicaldetails>:first-child{margin-top:0}
+.bibliographicaldetails>:last-child{margin-bottom:0}
+/* Code */
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#FFFFFF}
+/* Extra */
+#eksempel_opbygning>div{width:50%}
+#eksempel_opbygning p,#eksempel_opbygning td{font-size:80%}
+#eksempel_opbygning div.title>p{color:#0C2D83;font-size:90%}
+.exampleblock>.content{background:#E4E8F3}
 }
 </style>
 <script type="application/ld+json">
@@ -497,7 +501,7 @@ body.toc2.toc-right{padding-right:30em}
 		},
 	  "url": "https://sdfe.dk/"
 	}],
-	"dateModified": "2021-11-18",
+	"dateModified": "2022-02-10",
 	"headline": "Anbefalede standarder for geodata",
 	"name": "Anbefalede standarder for geodata",
 	"keywords": "geodata, standard, standarder, best practice, best practices, ISO, OGC, INSPIRE",
@@ -512,7 +516,7 @@ body.toc2.toc-right{padding-right:30em}
 <span id="author" class="author">Styrelsen for Dataforsyning og Effektivisering</span><br>
 <span id="email" class="email"><a href="https://sdfe.dk/" class="bare">https://sdfe.dk/</a></span><br>
 <span id="revnumber">version 1.0.0,</span>
-<span id="revdate">2021-11-18</span>
+<span id="revdate">2022-02-10</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Indholdsfortegnelse</div>
@@ -614,21 +618,35 @@ body.toc2.toc-right{padding-right:30em}
 <div class="sectionbody">
 <div class="paragraph">
 <p>Dette dokument indeholder en detaljeret gennemgang af relevante
-standarder og best practices, som det anbefales myndigheder at anvende
- ved indsamling, behandling og distribution af geodata, der skal indgå
- i digitale løsninger til brug for offentlig forvaltning. Dette
-understøtter interoperabilitet mellem data og systemer, så data kan
-anvendes og genbruges på tværs af den offentlige forvaltning.
-Standarderne er målrettet teknikere, der har ansvaret for de data og
+standarder og best practices til brug for indsamling, behandling og
+distribution af geodata, herunder i forbindelse med opbygning af
+digitale forvaltningsløsninger. Dette understøtter interoperabilitet
+mellem data og systemer, så data kan anvendes og genbruges på tværs.</p>
+</div>
+<div id="maalgruppe" class="openblock">
+<div class="title">Målgruppe</div>
+<div class="content">
+<div class="paragraph">
+<p>Dette dokument er målrettet ??.</p>
+</div>
+<div class="paragraph">
+<p>Selve standarderne er målrettet teknikere, der har ansvaret for de data og
 systemer, der understøtter forvaltning, som bygger på stedbestemmelse.</p>
 </div>
+</div>
+</div>
+<div id="baggrund" class="openblock">
+<div class="title">Baggrund</div>
+<div class="content">
 <div class="paragraph">
 <p>Dokumentet er et bilag til <em>Vejledning om geografi i
 lovgivningen</em> <a href="#vej-2020-9428">[VEJ nr 9428]</a>.
 Standarderne kan nemlig være relevante at anvende i forbindelse med
 anvendelse af geografi i lovgivningen, særligt i forhold til
 registermetoden (beskrevet i <em>Vejledning om geografi i
-lovgivningen</em> <a href="#vej-2020-9428">[VEJ nr 9428]</a>).</p>
+lovgivningen</em>).</p>
+</div>
+</div>
 </div>
 <div id="laesevejledning" class="openblock">
 <div class="title">Læsevejledning</div>
@@ -636,79 +654,56 @@ lovgivningen</em> <a href="#vej-2020-9428">[VEJ nr 9428]</a>).</p>
 <div class="paragraph">
 <p>Dette dokument er opbygget på følgende måde:</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
-<p>Der er beskrevet nogle rammer for indholdet, det vil sige nogle lovgivningsmæssige rammer, og hvor de behandlede dokumenter (især standarder) primært kommer fra</p>
+<p>Det første afsnit beskriver de lovgivningsmæssige rammer for indholdet og de to centrale standardiseringsorganisationer i geodatadomænet som de behandlede dokumenter primært kommer fra.</p>
 </li>
 <li>
-<p>En gennemgang af de relevante dokumenter, delt op i følgende kategorier:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="#begrebs-datamodeller">Begrebs- og datamodeller</a></p>
-</li>
-<li>
-<p><a href="#identifikatorer">Identifikatorer</a></p>
-</li>
-<li>
-<p><a href="#geometrimodel_opbevaring">Geometrimodel og opbevaring af geodata</a></p>
-</li>
-<li>
-<p><a href="#geografisk-reference">Geografisk reference</a></p>
-</li>
-<li>
-<p><a href="#tid-historik">Tid og historik</a></p>
-</li>
-<li>
-<p><a href="#metadata">Metadata</a></p>
-</li>
-<li>
-<p><a href="#indkodninger">Udveksling af geodata - indkodninger</a></p>
-</li>
-<li>
-<p><a href="#tjenester">Udveksling af geodata - tjenester</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
+<p>Det andet afsnit er en gennemgang af de relevante dokumenter, delt op i emnekategorier, og følger følgende struktur:</p>
+<div id="eksempel_opbygning" class="exampleblock">
+<div class="content">
+<div class="paragraph title">
+<p>Emnekategori</p>
 </div>
 <div class="paragraph">
-<p>Teksten i de nævnte kategorier er opbygget på følgende måde:</p>
+<p>Introducerende tekst til kategorien.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Der er en introducerende tekst til kategorien.</p>
-</li>
-<li>
-<p>Der et underafsnit for hvert dokument i en given kategori. Underafsnittet indeholder</p>
-<div class="ulist">
-<ul>
-<li>
-<p>først en boks med dokumentets bibliografiske detajler</p>
-</li>
-<li>
-<p>dernæst en kort beskrivelse,</p>
-</li>
-<li>
-<p>og endelig eventuelt nogle bemærkninger, f.eks. hvor man kan finde XML-skemaer til standarden.</p>
-</li>
-</ul>
+<div class="paragraph title">
+<p>Titel på standard eller best practice</p>
+</div>
+<div class="paragraph bibliographicaldetails">
+<p>Dokumentets bibliografiske detajler.</p>
+</div>
+<div class="paragraph">
+<p>Beskrivelse af standard/best practice.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Supplerende bemærkninger, f.eks. hvor man kan finde XML-skemaer til standarden, eller hvordan dokumentet relaterer sig til andre dokumenter.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="rammer"><a class="anchor" href="#rammer"></a>1. Rammer for løsninger som omfatter geodata</h2>
+<h2 id="rammer">1. Rammer for løsninger som omfatter geodata</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="inspire"><a class="anchor" href="#inspire"></a>1.1. INSPIRE-direktivet fastlægger regler for geografisk infrastruktur</h3>
+<h3 id="inspire">1.1. INSPIRE-direktivet fastlægger regler for geografisk infrastruktur</h3>
 <div class="paragraph">
 <p><a href="http://data.europa.eu/eli/dir/2007/2/2019-06-26">INSPIRE-direktivet</a> er
 fundamentet for ensartet stedbestemmelse på tværs af forvaltninger i EU.</p>
@@ -791,7 +786,7 @@ relevante emne.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sdos"><a class="anchor" href="#sdos"></a>1.2. ISO og OGC standarder</h3>
+<h3 id="sdos">1.2. ISO og OGC standarder</h3>
 <div class="paragraph">
 <p>ISO og OGC sikrer, at der etableres globale standarder for anvendelse af
 geodatakomponenter.</p>
@@ -875,14 +870,14 @@ deres produkt.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="fortegnelse"><a class="anchor" href="#fortegnelse"></a>2. Standarder og best practices på udvalgte områder med relation til geodata</h2>
+<h2 id="fortegnelse">2. Standarder og best practices på udvalgte områder med relation til geodata</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Standarder og best practices på følgende områder er opført og beskrevet
 i de næste afsnit.</p>
 </div>
 <div class="sect2">
-<h3 id="begrebs-datamodeller"><a class="anchor" href="#begrebs-datamodeller"></a>2.1. Begrebs- og datamodeller</h3>
+<h3 id="begrebs-datamodeller">2.1. Begrebs- og datamodeller</h3>
 <div class="paragraph">
 <p>Det er et arkitekturprincip i Digitaliseringsstyrelsens <a href="#fda-hvidbog">Hvidbog om fællesoffentlig digital arkitektur</a>,
 at gode data deles og genbruges. Det
@@ -917,15 +912,13 @@ INSPIRE-direktivet eller ej, så bør man bruge INSPIREs datamodel for det
 relevante tema som inspiration ved udarbejdelse af nye datamodeller.</p>
 </div>
 <div class="sect3">
-<h4 id="fda-hvidbog"><a class="anchor" href="#fda-hvidbog"></a>2.1.1. Hvidbog om fællesoffentlig digital arkitektur</h4>
-<div class="sidebarblock">
-<div class="content">
-DIGITALISERINGSSTYRELSEN. <em>Den digitalt sammenhængende offentlige
+<h4 id="fda-hvidbog">2.1.1. Hvidbog om fællesoffentlig digital arkitektur</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DIGITALISERINGSSTYRELSEN. <em>Den digitalt sammenhængende offentlige
 sektor. Hvidbog om fællesoffentlig digital arkitektur</em>. Version 1.0.
 juni 2017. [Set 11 februar 2020]. ISBN 978-87-93073-20-3. Tilgængelig
 på:
-<a href="https://arkitektur.digst.dk/sites/default/files/241_hvidbog_om_arkitektur_for_digitalisering_version_1.0_kolofon.pdf" title="Den digitalt sammenhængende offentlige sektor. Hvidbog om fællesoffentlig digital arkitektur">https://arkitektur.digst.dk/sites/default/files/241_hvidbog_om_arkitektur_for_digitalisering_version_1.0_kolofon.pdf</a>
-</div>
+<a href="https://arkitektur.digst.dk/sites/default/files/241_hvidbog_om_arkitektur_for_digitalisering_version_1.0_kolofon.pdf" title="Den digitalt sammenhængende offentlige sektor. Hvidbog om fællesoffentlig digital arkitektur">https://arkitektur.digst.dk/sites/default/files/241_hvidbog_om_arkitektur_for_digitalisering_version_1.0_kolofon.pdf</a></p>
 </div>
 <div class="paragraph">
 <p>Dokumentet beskriver arkitekturprincipper og –regler, som understøtter
@@ -933,8 +926,8 @@ en sammenhængende digitalisering af den offentlige sektor.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="fda-modelregler"><a class="anchor" href="#fda-modelregler"></a>2.1.2. Fællesoffentlige regler for begrebs- og datamodellering</h4>
-<div class="openblock bibliographicaldetailsblock">
+<h4 id="fda-modelregler">2.1.2. Fællesoffentlige regler for begrebs- og datamodellering</h4>
+<div class="openblock bibliographicaldetails">
 <div class="content">
 <div class="paragraph">
 <p>DIGITALISERINGSSTYRELSEN. <em>Fællesoffentlige regler for begrebs- og
@@ -950,9 +943,13 @@ bl.a. sikre, at der anvendes samme modelleringssprog, at begreber og
 data er navngivet entydigt og meningsfuldt, og at begreber og data er
 defineret fyldestgørende.</p>
 </div>
-<div class="openblock remarksblock">
-<div class="title">Bemærkninger</div>
-<div class="content">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
 <div class="paragraph">
 <p>I høj fokus skal være egenskaber som går igen i mange datasæt. Eksempler
 er forskellige typer datoer (forslagsdato, vedtagelsesdato, osv.) og
@@ -975,16 +972,16 @@ også punkt 2 om identifikatorer.</p>
 </li>
 </ul>
 </div>
-</div>
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="fda-modelregler-vejledning"><a class="anchor" href="#fda-modelregler-vejledning"></a>2.1.3. Vejledning i begrebs- og datamodellering</h4>
-<div class="sidebarblock">
-<div class="content">
-FÆLLESOFFENTLIG DIGITAL ARKITEKTUR, <em>Vejledning i begrebs- og
-datamodellering</em> [igangværende arbejde]
-</div>
+<h4 id="fda-modelregler-vejledning">2.1.3. Vejledning i begrebs- og datamodellering</h4>
+<div class="paragraph bibliographicaldetails">
+<p>FÆLLESOFFENTLIG DIGITAL ARKITEKTUR, <em>Vejledning i begrebs- og
+datamodellering</em> [igangværende arbejde]</p>
 </div>
 <div class="paragraph">
 <p>Vejledningen uddyber reglerne beskrevet i <a href="#fda-modelregler">Fællesoffentlige regler for begrebs- og datamodellering</a> og beskriver processerne omkring
@@ -992,12 +989,10 @@ modellering.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19103"><a class="anchor" href="#19103"></a>2.1.4. DS/ISO 19103 Konceptuelt modelleringssprog</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/ISO 19103:2015, <em>Geografisk information - Konceptuelt
-modelleringssprog</em>
-</div>
+<h4 id="19103">2.1.4. DS/ISO 19103 Konceptuelt modelleringssprog</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/ISO 19103:2015, <em>Geografisk information - Konceptuelt
+modelleringssprog</em></p>
 </div>
 <div class="paragraph">
 <p>Denne internationale standard angiver regler og retningslinjer for
@@ -1037,7 +1032,7 @@ datamodeller.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="identifikatorer"><a class="anchor" href="#identifikatorer"></a>2.2. Identifikatorer</h3>
+<h3 id="identifikatorer">2.2. Identifikatorer</h3>
 <div class="paragraph">
 <p>Et objekt skal have en entydig identifikator - som minimum unikt inden for datasættet objektet
 indgår i, og gerne globalt unikt - og som ikke ændres over tid. Tildeling og publicering af
@@ -1054,12 +1049,10 @@ Natura 2000-kode. Det er som regel forretningsnøglerne, som vil være omtalt i 
 hvorimod den unikke identifikator bruges til system-til-system-kommunikation.</p>
 </div>
 <div class="sect3">
-<h4 id="linked-identifiers-schemes"><a class="anchor" href="#linked-identifiers-schemes"></a>2.2.1. Linked identifier schemes</h4>
-<div class="sidebarblock">
-<div class="content">
-GEOSPATIAL COMMISSION, <em>Linked identifier schemes: Best practice guide. Version 0.3. oktober 2019.</em>
-Tilgængelig på: <a href="https://www.gov.uk/government/publications/linked-identifier-schemes-best-practice-guide" title="Linked identifier schemes: Best practice guide">https://www.gov.uk/government/publications/linked-identifier-schemes-best-practice-guide</a>
-</div>
+<h4 id="linked-identifiers-schemes">2.2.1. Linked identifier schemes</h4>
+<div class="paragraph bibliographicaldetails">
+<p>GEOSPATIAL COMMISSION, <em>Linked identifier schemes: Best practice guide. Version 0.3. oktober 2019.</em>
+Tilgængelig på: <a href="https://www.gov.uk/government/publications/linked-identifier-schemes-best-practice-guide" title="Linked identifier schemes: Best practice guide">https://www.gov.uk/government/publications/linked-identifier-schemes-best-practice-guide</a></p>
 </div>
 <div class="paragraph">
 <p>Denne best practice indeholder praktiske anbefalinger i, hvordan identifikatorer skal udformes,
@@ -1080,11 +1073,9 @@ Der eksisterer p.t. ikke et tilsvarende dansk dokument.
 </div>
 </div>
 <div class="sect3">
-<h4 id="uuid"><a class="anchor" href="#uuid"></a>2.2.2. UUID</h4>
-<div class="sidebarblock">
-<div class="content">
-Recommendation ITU-T X.667 | ISO/IEC 9834-8, <em>Information technology – Procedures for the operation of object identifier registration authorities: Generation of universally unique identifiers and their use in object identifiers</em>. International Telecommunication Union, 14 oktober 2012. ITU-T X-Series Recommendations: Data networks, open system communications and security. Tilgængelig på: <a href="http://handle.itu.int/11.1002/1000/11746" title="Information technology – Procedures for the operation of object identifier registration authorities: Generation of universally unique identifiers and their use in object identifiers">http://handle.itu.int/11.1002/1000/11746</a>
-</div>
+<h4 id="uuid">2.2.2. UUID</h4>
+<div class="paragraph bibliographicaldetails">
+<p>Recommendation ITU-T X.667 | ISO/IEC 9834-8, <em>Information technology – Procedures for the operation of object identifier registration authorities: Generation of universally unique identifiers and their use in object identifiers</em>. International Telecommunication Union, 14 oktober 2012. ITU-T X-Series Recommendations: Data networks, open system communications and security. Tilgængelig på: <a href="http://handle.itu.int/11.1002/1000/11746" title="Information technology – Procedures for the operation of object identifier registration authorities: Generation of universally unique identifiers and their use in object identifiers">http://handle.itu.int/11.1002/1000/11746</a></p>
 </div>
 <div class="paragraph">
 <p>Denne ISO standard standardiserer oprettelse af “universally unique identifiers” (UUID’er).</p>
@@ -1107,7 +1098,7 @@ præsentationer.
 </div>
 </div>
 <div class="sect2">
-<h3 id="geometrimodel_opbevaring"><a class="anchor" href="#geometrimodel_opbevaring"></a>2.3. Geometrimodel og opbevaring af geodata</h3>
+<h3 id="geometrimodel_opbevaring">2.3. Geometrimodel og opbevaring af geodata</h3>
 <div class="paragraph">
 <p>Geografiske data er kendetegnet ved, at der altid indgår geometriske objekter, og at disse har
 relationer til hinanden (topologiske relationer), fx at en bygning ligger op til en vej, eller at to veje
@@ -1116,11 +1107,9 @@ modeller der beskriver såvel geometriske som topologiske relationer. Disse mode
 implementeret i spatiale databaser, dvs. databaser hvori man opbevarer geodata.</p>
 </div>
 <div class="sect3">
-<h4 id="19107"><a class="anchor" href="#19107"></a>2.3.1. DS/EN ISO 19107 Geometrimodel</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19107:2019, <em>Geografisk information – Geometrimodel</em>
-</div>
+<h4 id="19107">2.3.1. DS/EN ISO 19107 Geometrimodel</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19107:2019, <em>Geografisk information – Geometrimodel</em></p>
 </div>
 <div class="paragraph">
 <p>Denne standard specificerer en model for beskrivelsen af de geografiske dele af geodata.
@@ -1146,11 +1135,9 @@ til, om man kan nøjes med simple features (se <a href="#sfa-ca">Simple feature 
 </div>
 </div>
 <div class="sect3">
-<h4 id="sfa-ca"><a class="anchor" href="#sfa-ca"></a>2.3.2. Simple feature access - Part 1: Common architecture</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 06-103r4, <em>OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 1: Common architecture</em> Version 1.2.1. 28 maj 2011. Tilgængelig på: <a href="http://portal.opengeospatial.org/files/?artifact_id=25355" title="OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 1: Common architecture">http://portal.opengeospatial.org/files/?artifact_id=25355</a>
-</div>
+<h4 id="sfa-ca">2.3.2. Simple feature access - Part 1: Common architecture</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 06-103r4, <em>OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 1: Common architecture</em> Version 1.2.1. 28 maj 2011. Tilgængelig på: <a href="http://portal.opengeospatial.org/files/?artifact_id=25355" title="OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 1: Common architecture">http://portal.opengeospatial.org/files/?artifact_id=25355</a></p>
 </div>
 <div class="paragraph">
 <p>OGC-standarden <em>OpenGIS Implementation Standard for Geographic
@@ -1289,12 +1276,10 @@ self intersection or self tangency</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sfa-sql"><a class="anchor" href="#sfa-sql"></a>2.3.3. Simple feature access - Part 2: SQL option</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 06-104r4, <em>OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 2: SQL option</em>. Version 1.2.1. 4 august 2010. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=25354" title="OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 2: SQL option">http://portal.opengeospatial.org/files/?artifact_id=25354</a>
-</div>
+<h4 id="sfa-sql">2.3.3. Simple feature access - Part 2: SQL option</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 06-104r4, <em>OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 2: SQL option</em>. Version 1.2.1. 4 august 2010. Tilgængelig på:
+<a href="http://portal.opengeospatial.org/files/?artifact_id=25354" title="OpenGIS Implementation Standard for Geographic Information Simple feature access - Part 2: SQL option">http://portal.opengeospatial.org/files/?artifact_id=25354</a></p>
 </div>
 <div class="paragraph">
 <p>OGC-standarden <em>OpenGIS Implementation Standard for Geographic
@@ -1331,11 +1316,9 @@ være opmærksom på versionerne ved valg af et system.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sql-mm"><a class="anchor" href="#sql-mm"></a>2.3.4. ISO/IEC 13249-3 Database languages — SQL multimedia and application packages — Part 3: Spatial</h4>
-<div class="sidebarblock">
-<div class="content">
-ISO/EC 13249-3:2016, <em>Information technology — Database languages — SQL multimedia and application packages — Part 3: Spatial</em>
-</div>
+<h4 id="sql-mm">2.3.4. ISO/IEC 13249-3 Database languages — SQL multimedia and application packages — Part 3: Spatial</h4>
+<div class="paragraph bibliographicaldetails">
+<p>ISO/EC 13249-3:2016, <em>Information technology — Database languages — SQL multimedia and application packages — Part 3: Spatial</em></p>
 </div>
 <div class="paragraph">
 <p>Denne ISO/IEC standard definerer, hvordan man opbevarer og håndterer
@@ -1377,7 +1360,7 @@ se f.eks. <a href="#stol03">[Stol03]</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="geografisk-reference"><a class="anchor" href="#geografisk-reference"></a>2.4. Geografisk reference</h3>
+<h3 id="geografisk-reference">2.4. Geografisk reference</h3>
 <div class="paragraph">
 <p>For at beskrive den geografiske placering eller position af et objekt
 kan der enten anvendes koordinater (med tilhørende referencesystem),
@@ -1388,11 +1371,9 @@ der ikke nogle oplagte geografiske identifikatorer, kan man anvende
 koordinater.</p>
 </div>
 <div class="sect3">
-<h4 id="19111"><a class="anchor" href="#19111"></a>2.4.1. DS/ISO 19111 Spatial orientering via koordinater</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/ISO 19111:2019, <em>Geografisk information - Spatial orientering via koordinater</em>
-</div>
+<h4 id="19111">2.4.1. DS/ISO 19111 Spatial orientering via koordinater</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/ISO 19111:2019, <em>Geografisk information - Spatial orientering via koordinater</em></p>
 </div>
 <div class="paragraph">
 <p>Dette dokument definerer den konceptuelle model til beskrivelse af
@@ -1461,11 +1442,9 @@ formidle og levere sparring omkring ønsker om yderligere funktionalitet.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19112"><a class="anchor" href="#19112"></a>2.4.2. DS/EN ISO 19112 Orientering via geografiske identifikatorer</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19112:2019, <em>Geografisk information - Orientering via geografiske identifikatorer</em>
-</div>
+<h4 id="19112">2.4.2. DS/EN ISO 19112 Orientering via geografiske identifikatorer</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19112:2019, <em>Geografisk information - Orientering via geografiske identifikatorer</em></p>
 </div>
 <div class="paragraph">
 <p>Dette dokument definerer den konceptuelle model for stedbestemte
@@ -1489,11 +1468,9 @@ for geografisk information.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19161-1"><a class="anchor" href="#19161-1"></a>2.4.3. DS/EN ISO 19161-1 Geodætiske referencer - Del 1: ITRS</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19161-1:2020, <em>Geografisk information - Geodætiske referencer - Del 1: ITRS (international terrestrial reference system)</em>
-</div>
+<h4 id="19161-1">2.4.3. DS/EN ISO 19161-1 Geodætiske referencer - Del 1: ITRS</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19161-1:2020, <em>Geografisk information - Geodætiske referencer - Del 1: ITRS (international terrestrial reference system)</em></p>
 </div>
 <div class="paragraph">
 <p>Denne standard definerer International Terrestrial Reference System
@@ -1523,14 +1500,12 @@ INSPIRE-principperne.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="wkt-crs"><a class="anchor" href="#wkt-crs"></a>2.4.4. Well-known text representation of coordinate reference systems</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 18-010r7, <em>Geographic information - Well-known text representation
+<h4 id="wkt-crs">2.4.4. Well-known text representation of coordinate reference systems</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 18-010r7, <em>Geographic information - Well-known text representation
 of coordinate reference systems</em>. Version 2.0.6. 13 august 2019.
 Tilgængelig på:
-<a href="http://docs.opengeospatial.org/is/18-010r7/18-010r7.html" title="Geographic information - Well-known text representation of coordinate reference systems">http://docs.opengeospatial.org/is/18-010r7/18-010r7.html</a>
-</div>
+<a href="http://docs.opengeospatial.org/is/18-010r7/18-010r7.html" title="Geographic information - Well-known text representation of coordinate reference systems">http://docs.opengeospatial.org/is/18-010r7/18-010r7.html</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard definerer strukturen og indholdet af
@@ -1553,11 +1528,9 @@ Standarden er også kendt som DS/ISO 19162:2019, <em>Geografisk information
 </div>
 </div>
 <div class="sect3">
-<h4 id="sdfe-crs"><a class="anchor" href="#sdfe-crs"></a>2.4.5. Vejledning i brug af koordinatreferencesystemer</h4>
-<div class="sidebarblock">
-<div class="content">
-SDFE, <em>Vejledning i brug af koordinatreferencesystemer</em>
-</div>
+<h4 id="sdfe-crs">2.4.5. Vejledning i brug af koordinatreferencesystemer</h4>
+<div class="paragraph bibliographicaldetails">
+<p>SDFE, <em>Vejledning i brug af koordinatreferencesystemer</em></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1574,7 +1547,7 @@ Igangværende arbejde
 </div>
 </div>
 <div class="sect2">
-<h3 id="tid-historik"><a class="anchor" href="#tid-historik"></a>2.5. Tid og historik</h3>
+<h3 id="tid-historik">2.5. Tid og historik</h3>
 <div class="paragraph">
 <p>Historik er den tidsmæssige repræsentation af noget. To vigtige
 tidsdimensioner er virkningstid (tid hvor et faktum er sandt i den
@@ -1647,16 +1620,14 @@ på et tidspunkt i fremtiden?</p>
 datalogi om bitemporalitet, også kendt som dobbelthistorik.</p>
 </div>
 <div class="sect3">
-<h4 id="temporal-databases"><a class="anchor" href="#temporal-databases"></a>2.5.1. Temporal Databases: Research and Practice</h4>
-<div class="sidebarblock">
-<div class="content">
-JENSEN, Christian S. og DYRESON, Curtis E. The Consensus Glossary of
+<h4 id="temporal-databases">2.5.1. Temporal Databases: Research and Practice</h4>
+<div class="paragraph bibliographicaldetails">
+<p>JENSEN, Christian S. og DYRESON, Curtis E. The Consensus Glossary of
 Temporal Database Concepts—February 1998 Version. I: <em>Temporal
 Databases: Research and Practice</em>. Springer Berlin Heidelberg, 1998. p. 
 367–405. Lecture Notes in Computer Science.
 doi:<a href="https://doi.org/10.1007/BFb0053710" title="The Consensus Glossary of Temporal Database Concepts—February 1998 Version (DOI)">10.1007/BFb0053710</a>.
-Tilgængelig på: <a href="https://infolab.usc.edu/csci599/Fall2001/paper/glossary.pdf" title="The Consensus Glossary of Temporal Database Concepts—February 1998 Version">https://infolab.usc.edu/csci599/Fall2001/paper/glossary.pdf</a>
-</div>
+Tilgængelig på: <a href="https://infolab.usc.edu/csci599/Fall2001/paper/glossary.pdf" title="The Consensus Glossary of Temporal Database Concepts—February 1998 Version">https://infolab.usc.edu/csci599/Fall2001/paper/glossary.pdf</a></p>
 </div>
 <div class="paragraph">
 <p>Denne artikel indeholder termer og definitioner for begreber som
@@ -1682,12 +1653,10 @@ time”.
 </div>
 </div>
 <div class="sect3">
-<h4 id="9075-2"><a class="anchor" href="#9075-2"></a>2.5.2. ISO/IEC 9075-2, Database languages — SQL — Part 2: Foundation (SQL/Foundation)</h4>
-<div class="sidebarblock">
-<div class="content">
-ISO/IEC 9075-2, <em>Information technology — Database languages — SQL —
-Part 2: Foundation (SQL/Foundation)</em>
-</div>
+<h4 id="9075-2">2.5.2. ISO/IEC 9075-2, Database languages — SQL — Part 2: Foundation (SQL/Foundation)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>ISO/IEC 9075-2, <em>Information technology — Database languages — SQL —
+Part 2: Foundation (SQL/Foundation)</em></p>
 </div>
 <div class="paragraph">
 <p>ISO-standarden for Structured Query Language (SQL) er delt op i flere
@@ -1709,12 +1678,10 @@ I SQL-standarden anvendes termen “application time” som synonym for
 </div>
 </div>
 <div class="sect3">
-<h4 id="19075-2"><a class="anchor" href="#19075-2"></a>2.5.3. ISO/IEC TR 19075-2, Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information</h4>
-<div class="sidebarblock">
-<div class="content">
-ISO/IEC JTC 1/SC 32. ISO/IEC TR 19075-2:2015, <em>Information technology — Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information</em>. Technical Report. International Organization for Standardization, 1 juli 2015. Tilgængelig på:
-<a href="https://standards.iso.org/ittf/PubliclyAvailableStandards/c060394_ISO_IEC_TR_19075-2_2015.zip" title="Information technology — Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information">https://standards.iso.org/ittf/PubliclyAvailableStandards/c060394_ISO_IEC_TR_19075-2_2015.zip</a>
-</div>
+<h4 id="19075-2">2.5.3. ISO/IEC TR 19075-2, Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information</h4>
+<div class="paragraph bibliographicaldetails">
+<p>ISO/IEC JTC 1/SC 32. ISO/IEC TR 19075-2:2015, <em>Information technology — Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information</em>. Technical Report. International Organization for Standardization, 1 juli 2015. Tilgængelig på:
+<a href="https://standards.iso.org/ittf/PubliclyAvailableStandards/c060394_ISO_IEC_TR_19075-2_2015.zip" title="Information technology — Database languages — SQL Technical Reports — Part 2: SQL Support for Time-Related Information">https://standards.iso.org/ittf/PubliclyAvailableStandards/c060394_ISO_IEC_TR_19075-2_2015.zip</a></p>
 </div>
 <div class="paragraph">
 <p>Ved siden af selve SQL-standarden har komitéen udgivet nogle tekniske
@@ -1735,12 +1702,10 @@ Rapporten er i skrivende stund under revidering.
 </div>
 </div>
 <div class="sect3">
-<h4 id="bitemporalitet-poc"><a class="anchor" href="#bitemporalitet-poc"></a>2.5.4. Bitemporalitet, proof of concept</h4>
-<div class="sidebarblock">
-<div class="content">
-GEODATASTYRELSEN og KL. <em>Bitemporalitet. Proof of concept</em>. 19 september 2014. [Set 11 februar 2020]. Tilgængelig på:
-<a href="http://arkitekturguiden.digitaliser.dk/sites/default/files/ctools/bitemporalitet-v1.2.pdf" title="Bitemporalitet. Proof of concept">http://arkitekturguiden.digitaliser.dk/sites/default/files/ctools/bitemporalitet-v1.2.pdf</a>
-</div>
+<h4 id="bitemporalitet-poc">2.5.4. Bitemporalitet, proof of concept</h4>
+<div class="paragraph bibliographicaldetails">
+<p>GEODATASTYRELSEN og KL. <em>Bitemporalitet. Proof of concept</em>. 19 september 2014. [Set 11 februar 2020]. Tilgængelig på:
+<a href="http://arkitekturguiden.digitaliser.dk/sites/default/files/ctools/bitemporalitet-v1.2.pdf" title="Bitemporalitet. Proof of concept">http://arkitekturguiden.digitaliser.dk/sites/default/files/ctools/bitemporalitet-v1.2.pdf</a></p>
 </div>
 <div class="paragraph">
 <p>Rapporten beskriver en række problemstillinger omkring historik og
@@ -1771,11 +1736,9 @@ Geodatastyrelsen er siden da blevet opdelt i
 </div>
 </div>
 <div class="sect3">
-<h4 id="sdfe-regler-historik"><a class="anchor" href="#sdfe-regler-historik"></a>2.5.5. Regelsæt for historik i data</h4>
-<div class="sidebarblock">
-<div class="content">
-SDFE, <em>Regelsæt for historik i data</em> [igangværende arbejde]
-</div>
+<h4 id="sdfe-regler-historik">2.5.5. Regelsæt for historik i data</h4>
+<div class="paragraph bibliographicaldetails">
+<p>SDFE, <em>Regelsæt for historik i data</em> [igangværende arbejde]</p>
 </div>
 <div class="paragraph">
 <p>Dokumentet beskrives tre sæt af historikmodeller, som understøtter
@@ -1807,14 +1770,12 @@ SDFE har p.t. et eksisterende regelsæt, som skal revideres.
 </div>
 </div>
 <div class="sect3">
-<h4 id="snodgrass"><a class="anchor" href="#snodgrass"></a>2.5.6. Developing time-oriented database applications in SQL</h4>
-<div class="sidebarblock">
-<div class="content">
-SNODGRASS, Richard T. <em>Developing time-oriented database applications in
+<h4 id="snodgrass">2.5.6. Developing time-oriented database applications in SQL</h4>
+<div class="paragraph bibliographicaldetails">
+<p>SNODGRASS, Richard T. <em>Developing time-oriented database applications in
 SQL</em>. San Francisco, California : Morgan Kaufmann Publishers, juli 1999.
 ISBN 1-55860-436-7. Tilgængelig på:
-<a href="https://www2.cs.arizona.edu/~rts/tdbbook.pdf" title="Developing time-oriented database applications in SQL">https://www2.cs.arizona.edu/~rts/tdbbook.pdf</a>
-</div>
+<a href="https://www2.cs.arizona.edu/~rts/tdbbook.pdf" title="Developing time-oriented database applications in SQL">https://www2.cs.arizona.edu/~rts/tdbbook.pdf</a></p>
 </div>
 <div class="paragraph">
 <p>Bogen er den mest omfattende behandling af håndtering af tid i
@@ -1823,14 +1784,12 @@ ovenstående rapport.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="fowler-temporal-patterns"><a class="anchor" href="#fowler-temporal-patterns"></a>2.5.7. Further Patterns of Enterprise Application Architecture</h4>
-<div class="sidebarblock">
-<div class="content">
-FOWLER, Martin. Temporal Patterns. <em>Further Patterns of Enterprise
+<h4 id="fowler-temporal-patterns">2.5.7. Further Patterns of Enterprise Application Architecture</h4>
+<div class="paragraph bibliographicaldetails">
+<p>FOWLER, Martin. Temporal Patterns. <em>Further Patterns of Enterprise
 Application Architecture</em>. 16 februar 2005. [Set 11 februar 2020].
 Tilgængelig på:
-<a href="https://martinfowler.com/eaaDev/timeNarrative.html" title="Temporal Patterns">https://martinfowler.com/eaaDev/timeNarrative.html</a>
-</div>
+<a href="https://martinfowler.com/eaaDev/timeNarrative.html" title="Temporal Patterns">https://martinfowler.com/eaaDev/timeNarrative.html</a></p>
 </div>
 <div class="paragraph">
 <p>Indlægget beskriver problematikken ang. tidsdimensioner og præsenterer
@@ -1841,7 +1800,7 @@ indlægget til forskelligt anden relevant litteratur.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="metadata"><a class="anchor" href="#metadata"></a>2.6. Metadata</h3>
+<h3 id="metadata">2.6. Metadata</h3>
 <div class="paragraph">
 <p>For at kunne understøtte anvendelsen af stedbestemt information i
 forhold til lovgivning er det nødvendigt med oplysninger om, hvordan man
@@ -1870,11 +1829,9 @@ løsningen, at de internationale standardiseringsorganer harmoniserer
 metadatastandarderne.</p>
 </div>
 <div class="sect3">
-<h4 id="19115"><a class="anchor" href="#19115"></a>2.6.1. DS/EN ISO 19115 Metadata</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19115:2005, <em>Geografisk information – Metadata</em>
-</div>
+<h4 id="19115">2.6.1. DS/EN ISO 19115 Metadata</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19115:2005, <em>Geografisk information – Metadata</em></p>
 </div>
 <div class="paragraph">
 <p>Denne standard beskriver geografiske metadata på en struktureret måde.
@@ -1904,11 +1861,9 @@ standardiseringsorganer CEN og ISO. Standarden er erstattet af
 </div>
 </div>
 <div class="sect3">
-<h4 id="19115-1"><a class="anchor" href="#19115-1"></a>2.6.2. DS/EN ISO 19115-1 Metadata - Part 1: Fundamentals</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19115-1:2014, <em>Geografisk information - Metadata - Part 1: Fundamentals</em>
-</div>
+<h4 id="19115-1">2.6.2. DS/EN ISO 19115-1 Metadata - Part 1: Fundamentals</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19115-1:2014, <em>Geografisk information - Metadata - Part 1: Fundamentals</em></p>
 </div>
 <div class="paragraph">
 <p>Denne standard beskriver geografiske metadatadata på en struktureret
@@ -1942,12 +1897,10 @@ ca. 10 år erfaring indsamlet fra en lang række af implementeringer.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19115-2"><a class="anchor" href="#19115-2"></a>2.6.3. DS/EN ISO 19115-2 Metadata - Del 2: Udvidelse til indsamling og behandling</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19115-2:2019, <em>Geografisk information - Metadata - Del 2:
-Udvidelse til indsamling og behandling</em>
-</div>
+<h4 id="19115-2">2.6.3. DS/EN ISO 19115-2 Metadata - Del 2: Udvidelse til indsamling og behandling</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19115-2:2019, <em>Geografisk information - Metadata - Del 2:
+Udvidelse til indsamling og behandling</em></p>
 </div>
 <div class="paragraph">
 <p>Denne standard udvider <a href="#19115-1">DS/EN ISO 19115-1</a> med de XML-skemaer, der kræves til
@@ -1973,11 +1926,9 @@ ligeledes en XML-indkodning til indsamling og behandling af metadata.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19119"><a class="anchor" href="#19119"></a>2.6.4. DS/EN ISO 19119 Tjenesteydelser</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19119:2006, <em>Geografisk information – Tjenesteydelser</em>
-</div>
+<h4 id="19119">2.6.4. DS/EN ISO 19119 Tjenesteydelser</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19119:2006, <em>Geografisk information – Tjenesteydelser</em></p>
 </div>
 <div class="paragraph">
 <p>Denne internationale standard definerer krav til, hvordan
@@ -2009,11 +1960,9 @@ supporten ved offentliggørelse og opdagelse af tjenester.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19139"><a class="anchor" href="#19139"></a>2.6.5. DS/ISO/TS 19139 Metadata - Implementering af XML-skema</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/ISO/TS 19139:2007, <em>Geografisk information - Metadata - Implementering af XML-skema</em>
-</div>
+<h4 id="19139">2.6.5. DS/ISO/TS 19139 Metadata - Implementering af XML-skema</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/ISO/TS 19139:2007, <em>Geografisk information - Metadata - Implementering af XML-skema</em></p>
 </div>
 <div class="paragraph">
 <p>Dette dokument definerer Geographic MetaData XML (gmd) indkodning, en XML
@@ -2035,11 +1984,9 @@ Schema implementering af <a href="#19115">DS/EN ISO 19115:2005</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="19157"><a class="anchor" href="#19157"></a>2.6.6. DS/EN ISO 19157 Datakvalitet</h4>
-<div class="sidebarblock">
-<div class="content">
-DS/EN ISO 19157:2014, <em>Geografisk information - Datakvalitet</em>
-</div>
+<h4 id="19157">2.6.6. DS/EN ISO 19157 Datakvalitet</h4>
+<div class="paragraph bibliographicaldetails">
+<p>DS/EN ISO 19157:2014, <em>Geografisk information - Datakvalitet</em></p>
 </div>
 <div class="paragraph">
 <p>ISO 19157 fastlægger principperne for beskrivelse af kvaliteten af
@@ -2095,13 +2042,11 @@ foreligger en opdateret version af standarden i anden halvdel af 2022.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tg-metadata"><a class="anchor" href="#tg-metadata"></a>2.6.7. Technical Guidance for the implementation of INSPIRE dataset and service metadata</h4>
-<div class="sidebarblock">
-<div class="content">
-<em>Technical Guidance for the implementation of INSPIRE dataset and
+<h4 id="tg-metadata">2.6.7. Technical Guidance for the implementation of INSPIRE dataset and service metadata</h4>
+<div class="paragraph bibliographicaldetails">
+<p><em>Technical Guidance for the implementation of INSPIRE dataset and
 service metadata based on ISO/TS 19139:2007</em>. Version 2.0.1. 2 marts
-2017. Tilgængelig på: <a href="http://inspire.ec.europa.eu/id/document/tg/metadata-iso19139/2.0.1" title="Technical Guidance for the implementation of INSPIRE dataset and service metadata based on ISO/TS 19139:2007">http://inspire.ec.europa.eu/id/document/tg/metadata-iso19139/2.0.1</a>
-</div>
+2017. Tilgængelig på: <a href="http://inspire.ec.europa.eu/id/document/tg/metadata-iso19139/2.0.1" title="Technical Guidance for the implementation of INSPIRE dataset and service metadata based on ISO/TS 19139:2007">http://inspire.ec.europa.eu/id/document/tg/metadata-iso19139/2.0.1</a></p>
 </div>
 <div class="paragraph">
 <p>Retningslinjer baseret på <a href="#19115">DS/EN ISO 19115</a> og <a href="#19119">DS/EN ISO 19119</a>
@@ -2110,15 +2055,13 @@ for at leve op til
 </div>
 </div>
 <div class="sect3">
-<h4 id="dcat"><a class="anchor" href="#dcat"></a>2.6.8. Data Catalog Vocabulary (DCAT)</h4>
-<div class="sidebarblock">
-<div class="content">
-ALBERTONI, Riccardo, BROWNING, David, COX, Simon, GONZALEZ BELTRAN,
+<h4 id="dcat">2.6.8. Data Catalog Vocabulary (DCAT)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>ALBERTONI, Riccardo, BROWNING, David, COX, Simon, GONZALEZ BELTRAN,
 Alejandra, PEREGO, Andrea og WINSTANLEY, Peter, red. <em>Data Catalog
 Vocabulary (DCAT) - Version 2</em>. W3C Recommendation. World Wide Web
 Consortium, 4 februar 2020. [Set 28 februar 2020]. Tilgængelig på:
-<a href="https://www.w3.org/TR/vocab-dcat-2/" title="Data Catalog Vocabulary (DCAT) - Version 2">https://www.w3.org/TR/vocab-dcat-2/</a>
-</div>
+<a href="https://www.w3.org/TR/vocab-dcat-2/" title="Data Catalog Vocabulary (DCAT) - Version 2">https://www.w3.org/TR/vocab-dcat-2/</a></p>
 </div>
 <div class="paragraph">
 <p>DCAT gør det muligt for en udgiver at beskrive datasæt og datatjenester
@@ -2160,13 +2103,11 @@ datasættet, og indeholder ikke rådata.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="geodcat-ap"><a class="anchor" href="#geodcat-ap"></a>2.6.9. GeoDCAT-AP</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 18-001r1, <em>GeoDCAT-AP</em>. OGC Discussion Paper. 9 januar 2019.
+<h4 id="geodcat-ap">2.6.9. GeoDCAT-AP</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 18-001r1, <em>GeoDCAT-AP</em>. OGC Discussion Paper. 9 januar 2019.
 Tilgængelig på:
-<a href="https://portal.opengeospatial.org/files/?artifact_id=82475" title="GeoDCAT-AP">https://portal.opengeospatial.org/files/?artifact_id=82475</a>
-</div>
+<a href="https://portal.opengeospatial.org/files/?artifact_id=82475" title="GeoDCAT-AP">https://portal.opengeospatial.org/files/?artifact_id=82475</a></p>
 </div>
 <div class="paragraph">
 <p>GeoDCAT er et initiativ med potentiale til integrere DCAT-metadata, som
@@ -2193,7 +2134,7 @@ INSPIRE har udviklet en
 </div>
 </div>
 <div class="sect2">
-<h3 id="indkodninger"><a class="anchor" href="#indkodninger"></a>2.7. Udveksling af geodata - indkodninger</h3>
+<h3 id="indkodninger">2.7. Udveksling af geodata - indkodninger</h3>
 <div class="paragraph">
 <p>Når data skal udveksles mellem digitale systemer, skal de ændres til en
 form (format), der kan forstås af to eller flere systemer. Et sæt regler
@@ -2207,13 +2148,11 @@ formel beskrivelse af planen for datastrukturen.</p>
 vektordata.</p>
 </div>
 <div class="sect3">
-<h4 id="gml-32"><a class="anchor" href="#gml-32"></a>2.7.1. Geography Markup Language (GML) Encoding Standard</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 07-036r1, <em>OpenGIS® Geography Markup Language (GML) Encoding
+<h4 id="gml-32">2.7.1. Geography Markup Language (GML) Encoding Standard</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 07-036r1, <em>OpenGIS® Geography Markup Language (GML) Encoding
 Standard</em>. Version 3.2.2. 5 december 2016. Tilgængelig på:
-<a href="https://portal.opengeospatial.org/files/?artifact_id=74183&amp;version=2" title="OpenGIS® Geography Markup Language (GML) Encoding Standard">https://portal.opengeospatial.org/files/?artifact_id=74183&amp;version=2</a>
-</div>
+<a href="https://portal.opengeospatial.org/files/?artifact_id=74183&amp;version=2" title="OpenGIS® Geography Markup Language (GML) Encoding Standard">https://portal.opengeospatial.org/files/?artifact_id=74183&amp;version=2</a></p>
 </div>
 <div class="paragraph">
 <p>Denne standard specificerer en indkodning i Extensible Markup Language
@@ -2274,13 +2213,11 @@ udveksling af et udvalg af features fra et datasæt via en webtjeneste.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="gml-33"><a class="anchor" href="#gml-33"></a>2.7.2. Geography Markup Language (GML) — Extended schemas and encoding rules</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 10-129r1, <em>OGC® Geography Markup Language (GML) — Extended schemas
+<h4 id="gml-33">2.7.2. Geography Markup Language (GML) — Extended schemas and encoding rules</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 10-129r1, <em>OGC® Geography Markup Language (GML) — Extended schemas
 and encoding rules</em>. Version 3.3.0. 7 februar 2012. Tilgængelig på:
-<a href="https://portal.opengeospatial.org/files/?artifact_id=46568" title="OGC® Geography Markup Language (GML) — Extended schemas and encoding rules">https://portal.opengeospatial.org/files/?artifact_id=46568</a>
-</div>
+<a href="https://portal.opengeospatial.org/files/?artifact_id=46568" title="OGC® Geography Markup Language (GML) — Extended schemas and encoding rules">https://portal.opengeospatial.org/files/?artifact_id=46568</a></p>
 </div>
 <div class="paragraph">
 <p>GML 3.3-standarden er en udvidelse af <a href="#gml-32">GML 3.2-standarden</a>, ikke en
@@ -2317,13 +2254,11 @@ fejlrettelser.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="gml-sf"><a class="anchor" href="#gml-sf"></a>2.7.3. Geography Markup Language (GML) simple features profile</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 10-100r3, <em>Geography Markup Language (GML) simple features profile
+<h4 id="gml-sf">2.7.3. Geography Markup Language (GML) simple features profile</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 10-100r3, <em>Geography Markup Language (GML) simple features profile
 (with Corrigendum)</em>. Version 2.0. 5 april 2012. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=42729" title="Geography Markup Language (GML) simple features profile (with Corrigendum)">http://portal.opengeospatial.org/files/?artifact_id=42729</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=42729" title="Geography Markup Language (GML) simple features profile (with Corrigendum)">http://portal.opengeospatial.org/files/?artifact_id=42729</a></p>
 </div>
 <div class="paragraph">
 <p>GML-standarden er en meget omfattende standard, og derfor har OGC
@@ -2345,13 +2280,11 @@ cirkelbuer og cirkler (<code>gml:Arc</code>, <code>gml:Circle</code> og <code>gm
 </div>
 </div>
 <div class="sect3">
-<h4 id="gpkg"><a class="anchor" href="#gpkg"></a>2.7.4. GeoPackage Encoding Standard</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 12-128r15, <em>OGC® GeoPackage Encoding Standard - with Corrigendum</em>.
+<h4 id="gpkg">2.7.4. GeoPackage Encoding Standard</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 12-128r15, <em>OGC® GeoPackage Encoding Standard - with Corrigendum</em>.
 Version 1.2.1. 6 september 2018. Tilgængelig på:
-<a href="http://www.geopackage.org/spec121/" title="OGC® GeoPackage Encoding Standard - with Corrigendum">http://www.geopackage.org/spec121/</a>
-</div>
+<a href="http://www.geopackage.org/spec121/" title="OGC® GeoPackage Encoding Standard - with Corrigendum">http://www.geopackage.org/spec121/</a></p>
 </div>
 <div class="paragraph">
 <p>GeoPackage er baseret på SQLite, en relationel
@@ -2411,13 +2344,11 @@ siden af GML.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="pdf-georegistration"><a class="anchor" href="#pdf-georegistration"></a>2.7.5. PDF Georegistration Encoding Best Practice</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 18-139r3, <em>PDF Georegistration Encoding Best Practice</em>. OGC Best
+<h4 id="pdf-georegistration">2.7.5. PDF Georegistration Encoding Best Practice</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 18-139r3, <em>PDF Georegistration Encoding Best Practice</em>. OGC Best
 Practice. Version 2.2. 17 januar 2011. Tilgængelig på:
-<a href="https://portal.opengeospatial.org/files/?artifact_id=40537" title="PDF Georegistration Encoding Best Practice">https://portal.opengeospatial.org/files/?artifact_id=40537</a>
-</div>
+<a href="https://portal.opengeospatial.org/files/?artifact_id=40537" title="PDF Georegistration Encoding Best Practice">https://portal.opengeospatial.org/files/?artifact_id=40537</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC best practice beskriver hvordan man kan lave PDF-dokumenter
@@ -2475,7 +2406,7 @@ og er inspireret af en del andre OGC-dokumenter om JSON.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tjenester"><a class="anchor" href="#tjenester"></a>2.8. Udveksling af geodata - tjenester</h3>
+<h3 id="tjenester">2.8. Udveksling af geodata - tjenester</h3>
 <div class="paragraph">
 <p>De tre vigtigste typer tjenester for geodata er søgetjenester (så man
 kan søge og finde data, vha. metadata), downloadtjenester (så man kan
@@ -2497,13 +2428,11 @@ practices for at dele data på webbet, se også
 <a href="https://www.ogcapi.org/" class="bare">https://www.ogcapi.org/</a>.</p>
 </div>
 <div class="sect3">
-<h4 id="wfs"><a class="anchor" href="#wfs"></a>2.8.1. Web Feature Service (WFS)</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 09-025r2, <em>OGC® Web Feature Service 2.0 Interface Standard – With
+<h4 id="wfs">2.8.1. Web Feature Service (WFS)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 09-025r2, <em>OGC® Web Feature Service 2.0 Interface Standard – With
 Corrigendum</em>. Version 2.0.2. 10 juli 2014. Tilgængelig på:
-<a href="http://docs.opengeospatial.org/is/09-025r2/09-025r2.html" title="OGC® Web Feature Service 2.0 Interface Standard – With Corrigendum">http://docs.opengeospatial.org/is/09-025r2/09-025r2.html</a>
-</div>
+<a href="http://docs.opengeospatial.org/is/09-025r2/09-025r2.html" title="OGC® Web Feature Service 2.0 Interface Standard – With Corrigendum">http://docs.opengeospatial.org/is/09-025r2/09-025r2.html</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard beskriver snitfladen mellem en klient og en
@@ -2545,13 +2474,11 @@ datasæt.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="tg-download"><a class="anchor" href="#tg-download"></a>2.8.2. INSPIRE Download Services</h4>
-<div class="sidebarblock">
-<div class="content">
-<em>Technical Guidance for the implementation of INSPIRE Download
+<h4 id="tg-download">2.8.2. INSPIRE Download Services</h4>
+<div class="paragraph bibliographicaldetails">
+<p><em>Technical Guidance for the implementation of INSPIRE Download
 Services</em>. Version 3.1. 9 august 2013. Tilgængelig på:
-<a href="https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services" title="Technical Guidance for the implementation of INSPIRE Download Services">https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services</a>
-</div>
+<a href="https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services" title="Technical Guidance for the implementation of INSPIRE Download Services">https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-download-services</a></p>
 </div>
 <div class="paragraph">
 <p>Denne INSPIRE-vejledning beskriver hvordan man kan leve op til INSPIREs
@@ -2577,13 +2504,11 @@ krav om downloadtjenester ved hjælp af bl.a. <a href="#wfs">WFS 2.0</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="wms"><a class="anchor" href="#wms"></a>2.8.3. Web Map Server (WMS)</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 06-042, <em>OpenGIS® Web Map Server Implementation Specification</em>.
+<h4 id="wms">2.8.3. Web Map Server (WMS)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 06-042, <em>OpenGIS® Web Map Server Implementation Specification</em>.
 Version 1.3.0. 15 marts 2006. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=14416" title="OpenGIS® Web Map Server Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=14416</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=14416" title="OpenGIS® Web Map Server Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=14416</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard beskriver snitfladen mellem en klient og en
@@ -2596,14 +2521,12 @@ information — Web Map Server-grænseflade</em>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="sld"><a class="anchor" href="#sld"></a>2.8.4. Styled Layer Descriptor (SLD)</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 05-078r4, <em>Styled Layer Descriptor profile of the Web Map Service
+<h4 id="sld">2.8.4. Styled Layer Descriptor (SLD)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 05-078r4, <em>Styled Layer Descriptor profile of the Web Map Service
 Implementation Specification</em>. Version 1.1.0. 29 juni 2007. Tilgængelig
 på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=22364" title="Styled Layer Descriptor profile of the Web Map Service Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=22364</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=22364" title="Styled Layer Descriptor profile of the Web Map Service Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=22364</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard, Styled Layer Descriptor (SLD), beskriver hvordan en
@@ -2624,26 +2547,22 @@ standard efterfølgeren af SLD 1.0.
 </div>
 </div>
 <div class="sect3">
-<h4 id="se"><a class="anchor" href="#se"></a>2.8.5. Symbology Encoding Implementation Specification</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 05-077r4, <em>Symbology Encoding Implementation Specification</em>. Version
+<h4 id="se">2.8.5. Symbology Encoding Implementation Specification</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 05-077r4, <em>Symbology Encoding Implementation Specification</em>. Version
 1.1.0. 21 juli 2006. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=16700" title="Symbology Encoding Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=16700</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=16700" title="Symbology Encoding Implementation Specification">http://portal.opengeospatial.org/files/?artifact_id=16700</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard definerer et sprog for præsentation af geodata (styling).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="wmts"><a class="anchor" href="#wmts"></a>2.8.6. Web Map Tile Service (WMTS)</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 07-057r7, <em>OpenGIS® Web Map Tile Service Implementation Standard</em>.
+<h4 id="wmts">2.8.6. Web Map Tile Service (WMTS)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 07-057r7, <em>OpenGIS® Web Map Tile Service Implementation Standard</em>.
 Version 1.0.0. 6 april 2010. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=35326" title="OpenGIS® Web Map Tile Service Implementation Standard">http://portal.opengeospatial.org/files/?artifact_id=35326</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=35326" title="OpenGIS® Web Map Tile Service Implementation Standard">http://portal.opengeospatial.org/files/?artifact_id=35326</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard beskriver snitfladen mellem en klient og en
@@ -2664,11 +2583,9 @@ Fordi billederne er genereret på forhånd, er performance af WMTS-tjenester bed
 </div>
 </div>
 <div class="sect3">
-<h4 id="tg-view"><a class="anchor" href="#tg-view"></a>2.8.7. INSPIRE View Services</h4>
-<div class="sidebarblock">
-<div class="content">
-<em>Technical Guidance for the implementation of INSPIRE View Services</em>. Version 3.11. 4 april 2013. Tilgængelig på: <a href="https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-view-services-1" title="Technical Guidance for the implementation of INSPIRE View Services">https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-view-services-1</a>
-</div>
+<h4 id="tg-view">2.8.7. INSPIRE View Services</h4>
+<div class="paragraph bibliographicaldetails">
+<p><em>Technical Guidance for the implementation of INSPIRE View Services</em>. Version 3.11. 4 april 2013. Tilgængelig på: <a href="https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-view-services-1" title="Technical Guidance for the implementation of INSPIRE View Services">https://inspire.ec.europa.eu/documents/technical-guidance-implementation-inspire-view-services-1</a></p>
 </div>
 <div class="paragraph">
 <p>Denne INSPIRE-vejledning beskriver, hvordan man kan leve op til INSPIREs
@@ -2690,13 +2607,11 @@ Man kan teste om en tjeneste er i overensstemmelse med vejledningen vha.
 </div>
 </div>
 <div class="sect3">
-<h4 id="csw"><a class="anchor" href="#csw"></a>2.8.8. Catalogue Services (CSW)</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 07-006r1, <em>OpenGIS® Catalogue Services Specification</em>. Version
+<h4 id="csw">2.8.8. Catalogue Services (CSW)</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 07-006r1, <em>OpenGIS® Catalogue Services Specification</em>. Version
 2.0.2. 23 februar 2007. Tilgængelig på:
-<a href="http://portal.opengeospatial.org/files/?artifact_id=20555" title="OpenGIS® Catalogue Services Specification">http://portal.opengeospatial.org/files/?artifact_id=20555</a>
-</div>
+<a href="http://portal.opengeospatial.org/files/?artifact_id=20555" title="OpenGIS® Catalogue Services Specification">http://portal.opengeospatial.org/files/?artifact_id=20555</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard definerer snitfladen mellem en klient og en
@@ -2718,14 +2633,12 @@ er i overensstemmelse med denne standard.
 </div>
 </div>
 <div class="sect3">
-<h4 id="csw-iso-ap"><a class="anchor" href="#csw-iso-ap"></a>2.8.9. CSW - ISO Metadata Application Profile</h4>
-<div class="sidebarblock">
-<div class="content">
-OGC 07-045r1, <em>OpenGIS® Catalogue Services Specification 2.0.2 - ISO
+<h4 id="csw-iso-ap">2.8.9. CSW - ISO Metadata Application Profile</h4>
+<div class="paragraph bibliographicaldetails">
+<p>OGC 07-045r1, <em>OpenGIS® Catalogue Services Specification 2.0.2 - ISO
 Metadata Application Profile: Corrigendum</em>. 9 marts 2018. Tilgængelig
 på:
-<a href="https://portal.opengeospatial.org/files/?artifact_id=77855" title="OpenGIS® Catalogue Services Specification 2.0.2 - ISO Metadata Application Profile: Corrigendum">https://portal.opengeospatial.org/files/?artifact_id=77855</a>
-</div>
+<a href="https://portal.opengeospatial.org/files/?artifact_id=77855" title="OpenGIS® Catalogue Services Specification 2.0.2 - ISO Metadata Application Profile: Corrigendum">https://portal.opengeospatial.org/files/?artifact_id=77855</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard definerer hvordan man anvender <a href="#csw">Catalogue Services (CSW)</a> sammen
@@ -2746,13 +2659,11 @@ er i overensstemmelse med denne standard.
 </div>
 </div>
 <div class="sect3">
-<h4 id="ogcfeat"><a class="anchor" href="#ogcfeat"></a>2.8.10. OGC API - Features - Part 1: Core</h4>
-<div class="sidebarblock">
-<div class="content">
-<em>OGC API - Features - Part 1: Core</em>. Version 1.0. 7 oktober 2019.
+<h4 id="ogcfeat">2.8.10. OGC API - Features - Part 1: Core</h4>
+<div class="paragraph bibliographicaldetails">
+<p><em>OGC API - Features - Part 1: Core</em>. Version 1.0. 7 oktober 2019.
 Tilgængelig på:
-<a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html" title="OGC API - Features - Part 1: Core">http://docs.opengeospatial.org/is/17-069r3/17-069r3.html</a>
-</div>
+<a href="http://docs.opengeospatial.org/is/17-069r3/17-069r3.html" title="OGC API - Features - Part 1: Core">http://docs.opengeospatial.org/is/17-069r3/17-069r3.html</a></p>
 </div>
 <div class="paragraph">
 <p>Denne OGC-standard er den første af OGCs nye suite af API-standarder.</p>
@@ -2776,7 +2687,7 @@ denne standard.
 </div>
 </div>
 <div class="sect1">
-<h2 id="referencer"><a class="anchor" href="#referencer"></a>Referencer</h2>
+<h2 id="referencer">Referencer</h2>
 <div class="sectionbody">
 <div class="ulist bibliography">
 <ul class="bibliography">
